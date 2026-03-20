@@ -1,0 +1,6 @@
+Industry_Name,Sector,Type,City,Emission_kg_per_day,Climate_Credits_Required,ESG_Level,Primary_Source,Reduction_Target_kg
+Tata Steel,Steel,Large,Kanpur,12000,12000,High,Coal+Energy,6000
+NTPC Power Plant,Energy,Large,Delhi,50000,50000,Medium,Coal Combustion,25000
+Adani Power,Energy,Large,Mumbai,42000,42000,Medium,Coal Combustion,20000
+Small Textile Unit,Textile,MSME,Kanpur,800,800,Low,Diesel+Electricity,400
+Brick Kiln,Construction,MSME,Delhi,3000,3000,Low,Coal Burning,1500

@@ -1,0 +1,41 @@
+
+
+/* Reset */
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  overflow-x: hidden;
+  font-family: sans-serif;
+}
+
+/* Galaxy Background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  background:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(circle at 20% 30%, #1e3a8a 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, #9333ea 0%, transparent 40%);
+
+  background-size: 3px 3px, 2px 2px, cover, cover;
+  background-position: 0 0, 50px 50px, center, center;
+  opacity: 0.8;
+}
+
+/* Optional star animation */
+@keyframes moveStars {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-1000px); }
+}
+
+body::before {
+  animation: moveStars 120s linear infinite;
+}
