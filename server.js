@@ -50,7 +50,7 @@ app.use("/api", contactRoutes);
 
 
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(process.env.MONGO_URL)
   .then(() => {
     console.log("✅ MongoDB connected");
     app.listen(process.env.PORT || 8080, () =>
