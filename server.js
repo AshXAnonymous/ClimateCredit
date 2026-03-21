@@ -23,7 +23,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({
+<<<<<<< HEAD
   origin: "https://climatecredit.vercel.app",
+=======
+  origin: "https://climatecredit.vercel.app/",
+>>>>>>> 1aa9b5c (Cors)
 }));
 
 
