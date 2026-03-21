@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({
-  origin: "https://climate-credit-trwo.vercel.app",
+  origin: "https://climatecredit.vercel.app/",
 }));
 
 
