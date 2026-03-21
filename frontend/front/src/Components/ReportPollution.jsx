@@ -87,7 +87,7 @@ const ReportPollution = () => {
       formPayload.append("image", formData.image);
     }
 
-    const res = await fetch("http://localhost:8080/api/report", {
+    const res = await fetch("https://climatecredit.onrender.com/api/report", {
       method: "POST",
       body: formPayload, // ❗ no headers here
     });
