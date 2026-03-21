@@ -24,9 +24,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // Vite dev URL
-            "https://climate-credit-trwo.vercel.app"
-              
+    origin: [
+      "http://localhost:5173",
+      "https://climate-credit-trwo.vercel.app"
+    ],
     credentials: true,
   })
 );
