@@ -49,6 +49,7 @@ app.use("/api", contactRoutes);
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => {
+    console.log("MONGO URI:", process.env.MONGO_URI);
     console.log("✅ MongoDB connected");
     app.listen(process.env.PORT || 8080, () =>
       console.log(`🚀 Server running on port ${process.env.PORT || 8080}`)
