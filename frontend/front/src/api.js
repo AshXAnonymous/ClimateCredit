@@ -1,4 +1,4 @@
-const API_BASE = "https://climatecredit.onrender.com/api/auth/register";
+const API_BASE = "http://localhost:8080";
 
 export const authFetch = async (url, options = {}) => {
   const token = localStorage.getItem("token");
