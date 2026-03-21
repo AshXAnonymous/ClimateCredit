@@ -20,7 +20,9 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.13.1",
+    "react-slick": "^0.31.0",
     "recharts": "^3.8.0",
+    "slick-carousel": "^1.8.1",
     "tailwindcss": "^4.1.17",
     "three": "^0.183.1"
   },
