@@ -25,6 +25,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     origin: "http://localhost:5173", // Vite dev URL
+            "https://your-vercel-app.vercel.app"
+              
     credentials: true,
   })
 );
