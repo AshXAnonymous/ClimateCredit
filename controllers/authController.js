@@ -21,7 +21,7 @@ exports.register = async (req, res) => {
       industryCategory,
       industryLocation
     } = req.body;
-   // ✅ ADD THIS CHECK
+    // ✅ ADD THIS CHECK
     if (!username || !email || !password) {
       return res.status(400).json({
         message: "All required fields are missing"
@@ -85,7 +85,7 @@ exports.register = async (req, res) => {
       await newUser.save();
     }
 
-    // 7️⃣ Send verification email
+// 7️⃣ Send verification email
 try {
   const transporter = nodemailer.createTransport({
     service: "gmail",
