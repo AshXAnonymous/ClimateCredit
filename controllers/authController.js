@@ -21,7 +21,12 @@ exports.register = async (req, res) => {
       industryCategory,
       industryLocation
     } = req.body;
-
+   // ✅ ADD THIS CHECK
+    if (!username || !email || !password) {
+      return res.status(400).json({
+        message: "All required fields are missing"
+      });
+    }
     // 1️⃣ Check existing user
     const existingUser = await User.findOne({ email });
     if (existingUser) {
