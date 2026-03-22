@@ -86,6 +86,8 @@ exports.register = async (req, res) => {
     }
 
     // 7️⃣ Send verification email
+    console.log("EMAIL_USER:", process.env.EMAIL_USER);
+    console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "Exists" : "Missing");
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -93,6 +95,7 @@ exports.register = async (req, res) => {
         pass: process.env.EMAIL_PASS,
       },
     });
+
 
     const verifyLink = `${process.env.BASE_URL}/api/auth/verify-email?token=${verificationToken}`;
 
@@ -106,7 +109,7 @@ exports.register = async (req, res) => {
       message: "User registered. Please check your email for verification.",
     });
 
-   } catch (err) {
+  } catch (err) {
     console.error("REGISTER ERROR:", err);
     return res.status(500).json({ message: err.message });
   }
