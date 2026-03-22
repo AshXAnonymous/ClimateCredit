@@ -240,4 +240,5 @@ exports.resetPassword = async (req, res) => {
 // ================= LOGOUT =================
 exports.logout = (req, res) => {
   return res.json({ message: "Logged out successfully" });
-};
+}}}
+
