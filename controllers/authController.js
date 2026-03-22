@@ -86,31 +86,36 @@ exports.register = async (req, res) => {
     }
 
     // 7️⃣ Send verification email
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+try {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
 
-    const verifyLink = `${process.env.BASE_URL}/api/auth/verify-email?token=${verificationToken}`;
+  const verifyLink = `${process.env.BASE_URL}/api/auth/verify-email?token=${verificationToken}`;
 
-    await transporter.sendMail({
-      to: email,
-      subject: "Verify Your Email",
-      html: `<p>Click <a href="${verifyLink}">here</a> to verify your email.</p>`,
-    });
+  await transporter.sendMail({
+    from: `"Climate Credit System" <${process.env.EMAIL_USER}>`, // ✅ IMPORTANT
+    to: email,
+    subject: "Verify Your Email",
+    html: `
+      <h2>Email Verification</h2>
+      <p>Click the button below to verify your account:</p>
+      <a href="${verifyLink}" 
+         style="padding:10px 20px;background:#4ade80;color:black;text-decoration:none;border-radius:5px;">
+         Verify Email
+      </a>
+    `,
+  });
 
-    return res.status(201).json({
-      message: "User registered. Please check your email for verification.",
-    });
+  console.log("✅ Email sent successfully");
 
-  } catch (err) {
-    console.error("REGISTER ERROR:", err);
-    return res.status(500).json({ message: err.message });
-  }
-};
+} catch (emailErr) {
+  console.log("❌ Email Error:", emailErr);
+}
 
 // ================= VERIFY EMAIL =================
 exports.verifyEmail = async (req, res) => {
