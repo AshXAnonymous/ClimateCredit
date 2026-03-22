@@ -10,6 +10,7 @@ router.post("/register", authController.register);
 // Login user
 router.post("/login", authController.login);
 
+
 // Email verification (if implemented)
 router.get("/verify-email", authController.verifyEmail);
 
@@ -20,8 +21,8 @@ router.post("/forgot-password", authController.forgotPassword);
 router.post("/reset-password", authController.resetPassword);
 
 
-
 //logout user
 router.post("/logout", authController.logout);
 
 module.exports = router;
+

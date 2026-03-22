@@ -37,13 +37,11 @@ const Industry = require("../models/Industry");
    resetTokenExpiry: Date,
    
   industry: {
+    
     type: mongoose.Schema.Types.ObjectId,
     ref: "Industry", 
     default: null,   
+
  }});
 
  module.exports=mongoose.model("User",userSchema);
-
-
- 
-  
